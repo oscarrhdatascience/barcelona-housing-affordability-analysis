@@ -207,6 +207,7 @@ marimo/_lsp/
 __marimo__/
 
 # Project data
-data/raw/
+data/raw/**
+!data/raw/**/.gitkeep
 data/processed/*.csv
 data/processed/*.db
