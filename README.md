@@ -50,7 +50,7 @@ barcelona-housing-affordability-analysis/
 | Notebook | Status | Description |
 |---|---|---|
 | 01 · Data Loading & SQL | ✅ Complete | Data ingestion, column standardisation, SQLite database creation, SQL exploration queries |
-| 02 · EDA & Cleaning | 🔄 In progress | Missing value analysis, outlier detection, feature engineering |
+| 02 · EDA & Cleaning | ✅ Complete | Missing value analysis, outlier detection, feature engineering |
 | 03 · Affordability Analysis | 🔄 In progress | Affordability index, district and neighbourhood visualisations |
 | 04 · Clustering | 🔄 In progress | K-Means clustering of neighbourhoods by affordability profile |
 
