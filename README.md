@@ -20,12 +20,12 @@ All datasets are sourced from [Open Data Barcelona](https://opendata-ajuntament.
 
 ## Tech Stack
 
-- **Python** — pandas, numpy, sqlite3
+- **Python** — pandas, numpy, sqlite3, matplotlib, seaborn
 - **SQL** — SQLite (joins, aggregations, subqueries, CASE expressions)
-- **Visualisation** — matplotlib, seaborn *(notebooks 03–04)*
 - **Environment** — Jupyter Notebook
 
 ## Project Structure
+
 ```
 barcelona-housing-affordability-analysis/
 │
@@ -42,24 +42,46 @@ barcelona-housing-affordability-analysis/
 │   ├── 03_affordability_analysis.ipynb
 │   └── 04_clustering.ipynb
 │
+├── visualizations/
 ├── README.md
 └── requirements.txt
 ```
+
 ## Notebooks
 
 | Notebook | Status | Description |
 |---|---|---|
 | 01 · Data Loading & SQL | ✅ Complete | Data ingestion, column standardisation, SQLite database creation, SQL exploration queries |
 | 02 · EDA & Cleaning | ✅ Complete | Missing value analysis, outlier detection, feature engineering |
-| 03 · Affordability Analysis | 🔄 In progress | Affordability index, district and neighbourhood visualisations |
+| 03 · Affordability Analysis | ✅ Complete | Affordability index, district and neighbourhood visualisations |
 | 04 · Clustering | 🔄 In progress | K-Means clustering of neighbourhoods by affordability profile |
 
-## Key Findings (Notebook 01)
+## Key Findings
+
+### Notebook 01 — Data Loading & SQL
 
 - **Cadastral values are structurally stable** across all districts (+0.06% to +0.66% over 2018–2022), confirming their nature as fiscal rather than market indicators.
 - **Income growth is unequal.** Lower-income districts show higher relative growth (Ciutat Vella +11.2%) but from a much lower base. Sarrià-Sant Gervasi, the wealthiest district, grew only +1.6%.
 - **Small dwelling concentration reveals residential segregation.** Ciutat Vella (52.9%) and Nou Barris (42.9%) have the highest share of dwellings under 60m² — and also the lowest household incomes. La Barceloneta is the most extreme case at 76.9%.
 - **This pattern is structurally persistent.** The share of small dwellings barely changed across any district over five years.
+
+### Notebook 03 — Affordability Analysis
+
+- **Ciutat Vella is the least affordable district by a significant margin.** With an affordability ratio of 0.061 in 2022, it stands well above the rest. La Barceloneta (0.068) and el Raval (0.063) are the two least affordable neighbourhoods in the city.
+- **The COVID-19 effect is visible in the data.** All districts show a peak in affordability ratio in 2020, driven by income falling faster than cadastral values during the pandemic. Ciutat Vella was the most affected, reaching 0.073 that year.
+- **"Affordable" does not mean high income.** The most affordable census sections have the lowest median income (~€21,000). Affordability here reflects low cadastral values, not purchasing power.
+- **Small dwellings and low affordability are structurally linked.** La Barceloneta combines the highest affordability ratio (0.068) with the highest share of small dwellings (80%).
+- **The inequality is persistent across all five years analysed.** The ranking of neighbourhoods by affordability ratio barely changed over the period.
+
+## Visualisations
+
+![Affordability Ratio by District](visualizations/01_affordability_ratio_by_district.png)
+
+![Affordability Evolution 2018–2022](visualizations/04_affordability_evolution.png)
+
+![Top 10 Least Affordable Neighbourhoods](visualizations/05_top10_least_affordable.png)
+
+![Affordability Heatmap](visualizations/07_affordability_heatmap.png)
 
 ## How to Run
 
