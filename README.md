@@ -1,5 +1,6 @@
 # Barcelona Housing Affordability Analysis
 
+[![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/oscarrhdatascience/barcelona-housing-affordability-analysis/main?filepath=notebooks/04_clustering.ipynb)
 Analysis of housing affordability in Barcelona (2018–2022) using open data from the Barcelona City Council. The project explores the relationship between cadastral property values, dwelling size distribution, and household income across the city's 10 districts and 73 neighbourhoods.
 
 ## Motivation
