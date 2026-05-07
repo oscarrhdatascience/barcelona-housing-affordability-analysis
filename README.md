@@ -20,7 +20,7 @@ All datasets are sourced from [Open Data Barcelona](https://opendata-ajuntament.
 
 ## Tech Stack
 
-- **Python** — pandas, numpy, sqlite3, matplotlib, seaborn
+- **Python** — pandas, numpy, sqlite3, matplotlib, seaborn, scikit-learn, ipywidgets
 - **SQL** — SQLite (joins, aggregations, subqueries, CASE expressions)
 - **Environment** — Jupyter Notebook
 
@@ -54,7 +54,7 @@ barcelona-housing-affordability-analysis/
 | 01 · Data Loading & SQL | ✅ Complete | Data ingestion, column standardisation, SQLite database creation, SQL exploration queries |
 | 02 · EDA & Cleaning | ✅ Complete | Missing value analysis, outlier detection, feature engineering |
 | 03 · Affordability Analysis | ✅ Complete | Affordability index, district and neighbourhood visualisations |
-| 04 · Clustering | 🔄 In progress | K-Means clustering of neighbourhoods by affordability profile |
+| 04 · Clustering | ✅ Complete | K-Means clustering, PCA visualisation, interactive affordability explorer |
 
 ## Key Findings
 
@@ -73,6 +73,14 @@ barcelona-housing-affordability-analysis/
 - **Small dwellings and low affordability are structurally linked.** La Barceloneta combines the highest affordability ratio (0.068) with the highest share of small dwellings (80%).
 - **The inequality is persistent across all five years analysed.** The ranking of neighbourhoods by affordability ratio barely changed over the period.
 
+### Notebook 04 — Clustering
+
+- **K-Means with k=3 is the optimal solution**, confirmed by both the Elbow Method and the Silhouette Score (0.39 at k=3).
+- **Three distinct affordability profiles emerge:** Affordable (44 neighbourhoods), Critical (6 neighbourhoods) and High-Value (23 neighbourhoods).
+- **The Critical cluster is geographically concentrated in Ciutat Vella.** 4 of the 6 critical neighbourhoods (la Barceloneta, el Raval, el Gòtic, Sant Pere/Santa Caterina/la Ribera) belong to the same district.
+- **High cadastral value alone does not define affordability pressure.** The High-Value cluster has the highest prices (€1,206/m²) but also the highest income (€28,921), resulting in a low affordability ratio — similar to the Affordable cluster.
+- **PCA confirms cluster quality.** Two principal components explain 90.8% of total variance and the three clusters are clearly separated in PCA space.
+
 ## Visualisations
 
 ![Affordability Ratio by District](visualizations/01_affordability_ratio_by_district.png)
@@ -82,6 +90,10 @@ barcelona-housing-affordability-analysis/
 ![Top 10 Least Affordable Neighbourhoods](visualizations/05_top10_least_affordable.png)
 
 ![Affordability Heatmap](visualizations/07_affordability_heatmap.png)
+
+![K-Means Clustering PCA](visualizations/09_cluster_pca.png)
+
+![Cluster Profiles](visualizations/10_cluster_profiles.png)
 
 ## How to Run
 
